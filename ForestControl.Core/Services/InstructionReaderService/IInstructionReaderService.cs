@@ -8,6 +8,6 @@ namespace ForestControl.Core.Services
 {
     public interface IInstructionReaderService
     {
-        Task<Position> ReadInitialPosition();
+        Task<Position> ReadInitialPositionAsync();
     }
 }

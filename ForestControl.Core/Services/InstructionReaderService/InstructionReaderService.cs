@@ -16,7 +16,7 @@ namespace ForestControl.Core.Services
             _inputReader = new StreamReader(inputStream);
         }
 
-        public async Task<Position> ReadInitialPosition()
+        public async Task<Position> ReadInitialPositionAsync()
         {
             string line = await _inputReader.ReadLineAsync();
             var positionString = line.Split(' ');
