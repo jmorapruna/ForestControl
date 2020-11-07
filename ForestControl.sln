@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForestControl.Core", "ForestControl.Core\ForestControl.Core.csproj", "{F593AD48-B0DB-4F92-81A3-EEF60CA13ADA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ForestControl.Core", "ForestControl.Core\ForestControl.Core.csproj", "{F593AD48-B0DB-4F92-81A3-EEF60CA13ADA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForestControl.Core.Tests", "ForestControl.Core.Tests\ForestControl.Core.Tests.csproj", "{26DC1F10-0B2E-4E2D-A7D4-879571503092}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ForestControl.Core.Tests", "ForestControl.Core.Tests\ForestControl.Core.Tests.csproj", "{26DC1F10-0B2E-4E2D-A7D4-879571503092}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForestControl.ConsoleApp", "ForestControl.ConsoleApp\ForestControl.ConsoleApp.csproj", "{A9427D2A-9F44-483E-AAFC-8C38FBC7AC74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{26DC1F10-0B2E-4E2D-A7D4-879571503092}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26DC1F10-0B2E-4E2D-A7D4-879571503092}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26DC1F10-0B2E-4E2D-A7D4-879571503092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9427D2A-9F44-483E-AAFC-8C38FBC7AC74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9427D2A-9F44-483E-AAFC-8C38FBC7AC74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9427D2A-9F44-483E-AAFC-8C38FBC7AC74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9427D2A-9F44-483E-AAFC-8C38FBC7AC74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

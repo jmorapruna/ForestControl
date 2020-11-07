@@ -19,7 +19,7 @@ namespace ForestControl.Core.Tests
         public void TestReadInitialPosition(string input, int expectedX, int expectedY)
         {
             var service = new InstructionReaderService();
-            var result = service.ReadInitialPosition(input);
+            var result = service.ReadAreaDimensions(input);
 
             Assert.AreEqual(expectedX, result.X);
             Assert.AreEqual(expectedY, result.Y);

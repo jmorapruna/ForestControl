@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ForestControl.Core.Models
 {
-    public class ExecutionInstruction
+    public class ExecutionInstructions
     {
         public Vector InitialPosition { get; set; }
         public IDirection InitialDirection { get; set; }

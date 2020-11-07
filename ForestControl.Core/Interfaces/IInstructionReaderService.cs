@@ -8,7 +8,7 @@ namespace ForestControl.Core
 {
     public interface IInstructionReaderService
     {
-        Vector ReadInitialPosition(string firstLine);
-        ExecutionInstruction ReadTwoLinesOfInstructions(string line1, string line2);
+        Vector ReadAreaDimensions(string firstLine);
+        ExecutionInstructions ReadTwoLinesOfInstructions(string line1, string line2);
     }
 }

@@ -10,9 +10,9 @@ namespace ForestControl.Core.Services
 {
     public class InstructionReaderService : IInstructionReaderService
     {
-        public Vector ReadInitialPosition(string firstLine)
+        public Vector ReadAreaDimensions(string line)
         {
-            var positionString = firstLine.Split(' ');
+            var positionString = line.Split(' ');
 
             int x = int.Parse(positionString[0]);
             int y = int.Parse(positionString[1]);
@@ -51,7 +51,7 @@ namespace ForestControl.Core.Services
             }
         }
 
-        public ExecutionInstruction ReadTwoLinesOfInstructions(string line1, string line2)
+        public ExecutionInstructions ReadTwoLinesOfInstructions(string line1, string line2)
         {
             if (line1 == null || line2 == null)
                 return null;
@@ -69,7 +69,7 @@ namespace ForestControl.Core.Services
                 .Select(c => _ParseExecutionStep(c))
                 .ToArray();
 
-            return new ExecutionInstruction()
+            return new ExecutionInstructions()
             {
                 InitialDirection = initialDirection,
                 InitialPosition = initialPosition,
