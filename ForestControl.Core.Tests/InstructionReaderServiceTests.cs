@@ -2,6 +2,7 @@ using ForestControl.Core.Models;
 using ForestControl.Core.Services;
 using NUnit.Framework;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,6 +31,34 @@ namespace ForestControl.Core.Tests
 
             Assert.AreEqual(expectedX, result.X);
             Assert.AreEqual(expectedY, result.Y);
+        }
+
+        [Test]
+        public async Task TestReadTwoLinesOfInstructions()
+        {
+            var service = new InstructionReaderService(_GetMockedStream("2 3 E\nLRMRMLLR"));
+            var result = await service.ReadTwoLinesOfInstructions();
+
+            Assert.AreEqual(Directions.East, result.InitialDirection);
+            Assert.AreEqual(2, result.InitialPosition.X);
+            Assert.AreEqual(3, result.InitialPosition.Y);
+
+            var expectedSteps = new[] {
+                ExecutionSteps.TurnLeft,
+                ExecutionSteps.TurnRight,
+                ExecutionSteps.GoForward,
+                ExecutionSteps.TurnRight,
+                ExecutionSteps.GoForward,
+                ExecutionSteps.TurnLeft,
+                ExecutionSteps.TurnLeft,
+                ExecutionSteps.TurnRight,
+            };
+
+            Assert.AreEqual(expectedSteps.Count(), result.Steps.Count());
+            expectedSteps
+                .Zip(result.Steps)
+                .ToList()
+                .ForEach(x => Assert.AreEqual(x.First, x.Second));
         }
     }
 }

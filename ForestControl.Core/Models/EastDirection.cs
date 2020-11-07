@@ -2,7 +2,7 @@
 
 namespace ForestControl.Core
 {
-    public class EastDirection : IDirection
+    class EastDirection : IDirection
     {
     }
 
