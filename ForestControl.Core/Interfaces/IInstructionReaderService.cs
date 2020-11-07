@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ForestControl.Core.Services
+namespace ForestControl.Core
 {
     public interface IInstructionReaderService
     {
-        Task<Vector> ReadInitialPositionAsync();
-        Task<ExecutionInstruction> ReadTwoLinesOfInstructions();
+        Vector ReadInitialPosition(string firstLine);
+        ExecutionInstruction ReadTwoLinesOfInstructions(string line1, string line2);
     }
 }

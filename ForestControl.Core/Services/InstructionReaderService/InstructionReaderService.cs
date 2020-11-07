@@ -10,17 +10,9 @@ namespace ForestControl.Core.Services
 {
     public class InstructionReaderService : IInstructionReaderService
     {
-        private readonly StreamReader _inputReader;
-
-        public InstructionReaderService(Stream inputStream)
+        public Vector ReadInitialPosition(string firstLine)
         {
-            _inputReader = new StreamReader(inputStream);
-        }
-
-        public async Task<Vector> ReadInitialPositionAsync()
-        {
-            string line = await _inputReader.ReadLineAsync();
-            var positionString = line.Split(' ');
+            var positionString = firstLine.Split(' ');
 
             int x = int.Parse(positionString[0]);
             int y = int.Parse(positionString[1]);
@@ -59,13 +51,12 @@ namespace ForestControl.Core.Services
             }
         }
 
-        public async Task<ExecutionInstruction> ReadTwoLinesOfInstructions()
+        public ExecutionInstruction ReadTwoLinesOfInstructions(string line1, string line2)
         {
-            string firstLine = await _inputReader.ReadLineAsync();
-            if (firstLine == null)
+            if (line1 == null || line2 == null)
                 return null;
 
-            var initialPositionString = firstLine.Split(' ');
+            var initialPositionString = line1.Split(' ');
 
             int x = int.Parse(initialPositionString[0]);
             int y = int.Parse(initialPositionString[1]);
@@ -74,11 +65,7 @@ namespace ForestControl.Core.Services
             string initialDirectionCode = initialPositionString[2];
             var initialDirection = _ParseDirection(initialDirectionCode);
 
-            string secondLine = await _inputReader.ReadLineAsync();
-            if (secondLine == null)
-                return null;
-
-            var steps = secondLine
+            var steps = line2
                 .Select(c => _ParseExecutionStep(c))
                 .ToArray();
 
