@@ -6,5 +6,6 @@ namespace ForestControl.Core
 {
     public interface IExecutionStep
     {
+        IDirection GetNextDirection(IDirection direction);
     }
 }

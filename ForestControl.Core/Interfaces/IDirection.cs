@@ -7,5 +7,7 @@ namespace ForestControl.Core
     public interface IDirection
     {
         char GetCode();
+        IDirection GetTurnLeftNextDirection();
+        IDirection GetTurnRightNextDirection();
     }
 }

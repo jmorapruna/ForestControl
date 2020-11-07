@@ -6,6 +6,7 @@ namespace ForestControl.Core.Models
 {
     public class TurnLeftExecutionStep : IExecutionStep
     {
+        public IDirection GetNextDirection(IDirection direction) => direction.GetTurnLeftNextDirection();
     }
 
     public static partial class ExecutionSteps
