@@ -4,6 +4,7 @@ namespace ForestControl.Core
 {
     class SouthDirection : IDirection
     {
+        public char GetCode() => 'S';
     }
 
     public static partial class Directions
