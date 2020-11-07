@@ -22,13 +22,13 @@ namespace ForestControl.Core.Tests
             var input1 = new ExecutionResult()
             {
                 FinalDirection = Directions.East,
-                FinalPosition = new Position(5, 1),
+                FinalPosition = new Vector(5, 1),
             };
 
             var input2 = new ExecutionResult()
             {
                 FinalDirection = Directions.North,
-                FinalPosition = new Position(3, 3),
+                FinalPosition = new Vector(3, 3),
             };
 
             var stream = new MemoryStream();

@@ -17,7 +17,7 @@ namespace ForestControl.Core.Services
             _inputReader = new StreamReader(inputStream);
         }
 
-        public async Task<Position> ReadInitialPositionAsync()
+        public async Task<Vector> ReadInitialPositionAsync()
         {
             string line = await _inputReader.ReadLineAsync();
             var positionString = line.Split(' ');
@@ -25,7 +25,7 @@ namespace ForestControl.Core.Services
             int x = int.Parse(positionString[0]);
             int y = int.Parse(positionString[1]);
 
-            var position = new Position(x, y);
+            var position = new Vector(x, y);
             return position;
         }
 
@@ -69,7 +69,7 @@ namespace ForestControl.Core.Services
 
             int x = int.Parse(initialPositionString[0]);
             int y = int.Parse(initialPositionString[1]);
-            var initialPosition = new Position(x, y);
+            var initialPosition = new Vector(x, y);
 
             string initialDirectionCode = initialPositionString[2];
             var initialDirection = _ParseDirection(initialDirectionCode);

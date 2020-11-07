@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ForestControl.Core.Models;
+using System;
 
 namespace ForestControl.Core
 {
@@ -9,6 +10,8 @@ namespace ForestControl.Core
         public IDirection GetTurnLeftNextDirection() => Directions.North;
 
         public IDirection GetTurnRightNextDirection() => Directions.South;
+
+        public Vector GetPositionDeltaForAForwardStep() => ForwardDirectionVectors.East;
     }
 
     public static partial class Directions

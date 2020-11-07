@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ForestControl.Core.Tests
 {
-    public class DroneTests
+    public class DroneDirectionChangeTests
     {
         [SetUp]
         public void Setup()
@@ -17,7 +17,7 @@ namespace ForestControl.Core.Tests
         [Test]
         public void TestDirectionShouldNotChangeAfterGoForwardStep()
         {
-            var drone = new Drone(new Position(1, 1), Directions.East);
+            var drone = new Drone(new Vector(1, 1), Directions.East, new Vector(5, 5));
             
             drone.ExecuteStep(ExecutionSteps.GoForward);
 
@@ -27,18 +27,17 @@ namespace ForestControl.Core.Tests
         [Test]
         public void TestDirectionAfterGoTurnLeftStep()
         {
-            var drone = new Drone(new Position(1, 1), Directions.East);
+            var drone = new Drone(new Vector(1, 1), Directions.East, new Vector(5, 5));
 
             drone.ExecuteStep(ExecutionSteps.TurnLeft);
 
             Assert.AreEqual(Directions.North, drone.Direction);
         }
 
-
         [Test]
         public void TestDirectionAfterGoTurnRightStep()
         {
-            var drone = new Drone(new Position(1, 1), Directions.East);
+            var drone = new Drone(new Vector(1, 1), Directions.East, new Vector(5, 5));
 
             drone.ExecuteStep(ExecutionSteps.TurnRight);
 

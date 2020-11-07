@@ -6,7 +6,7 @@ namespace ForestControl.Core.Models
 {
     public class ExecutionInstruction
     {
-        public Position InitialPosition { get; set; }
+        public Vector InitialPosition { get; set; }
         public IDirection InitialDirection { get; set; }
         public IEnumerable<IExecutionStep> Steps { get; set; }
     }

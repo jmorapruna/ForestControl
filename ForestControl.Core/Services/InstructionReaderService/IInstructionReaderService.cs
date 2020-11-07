@@ -8,7 +8,7 @@ namespace ForestControl.Core.Services
 {
     public interface IInstructionReaderService
     {
-        Task<Position> ReadInitialPositionAsync();
+        Task<Vector> ReadInitialPositionAsync();
         Task<ExecutionInstruction> ReadTwoLinesOfInstructions();
     }
 }

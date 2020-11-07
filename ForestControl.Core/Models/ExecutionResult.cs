@@ -6,7 +6,7 @@ namespace ForestControl.Core.Models
 {
     public class ExecutionResult
     {
-        public Position FinalPosition { get; set; }
+        public Vector FinalPosition { get; set; }
         public IDirection FinalDirection { get; set; }
     }
 }
