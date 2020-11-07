@@ -62,6 +62,8 @@ namespace ForestControl.Core.Services
         public async Task<ExecutionInstruction> ReadTwoLinesOfInstructions()
         {
             string firstLine = await _inputReader.ReadLineAsync();
+            if (firstLine == null)
+                return null;
 
             var initialPositionString = firstLine.Split(' ');
 
@@ -73,6 +75,9 @@ namespace ForestControl.Core.Services
             var initialDirection = _ParseDirection(initialDirectionCode);
 
             string secondLine = await _inputReader.ReadLineAsync();
+            if (secondLine == null)
+                return null;
+
             var steps = secondLine
                 .Select(c => _ParseExecutionStep(c))
                 .ToArray();
