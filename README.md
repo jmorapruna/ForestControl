@@ -10,7 +10,7 @@ Functional considerations:
 The requirements indicated in one example that the positioning of the drones began with 0. In contrast, in the examples of inputs and outputs they suggested that the numbering was from 1. The position example "0 0 N" was assumed to be incorrect.
 
 **It has been assumed that exceeding one position the area of ​​the drones results in a position on the opposite side of the crossed border.**
-The requirements did not explicitly indicate how this behavior should be treated. the chosen behavior is compatible with the requirements tests.
+The requirements did not explicitly indicate how this behavior should be treated. The chosen behavior is compatible with the requirements tests.
 
 **It has been assumed that the data entry will be done in a correct format and that no prior validation is required.**
 

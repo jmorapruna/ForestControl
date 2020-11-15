@@ -14,7 +14,7 @@ namespace ForestControl.ConsoleApp
             IInstructionReaderService instructionReaderService = new InstructionReaderService();
 
             string areaDimensionsLine = Console.ReadLine();
-            var initialPosition = instructionReaderService.ReadAreaDimensions(areaDimensionsLine);
+            var areaDimensions = instructionReaderService.ReadAreaDimensions(areaDimensionsLine);
 
             while (true)
             {
@@ -27,7 +27,7 @@ namespace ForestControl.ConsoleApp
                     return;
 
                 var instructions = instructionReaderService.ReadTwoLinesOfInstructions(firstLine, secondLine);
-                var drone = new Drone(instructions.InitialPosition, instructions.InitialDirection, initialPosition);
+                var drone = new Drone(instructions.InitialPosition, instructions.InitialDirection, areaDimensions);
 
                 foreach (var step in instructions.Steps)
                 {
